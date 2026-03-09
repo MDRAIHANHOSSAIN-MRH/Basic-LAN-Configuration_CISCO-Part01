@@ -1,0 +1,95 @@
+Sun Mar 1 15:29:12 2026   Router9   Router>en
+Sun Mar 1 15:29:15 2026   Router9   Router#conf t
+Sun Mar 1 15:30:29 2026   Router9   Router(config)#int f0/0
+Sun Mar 1 15:32:42 2026   Router9   Router(config-if)#no shutdown 
+Sun Mar 1 15:34:19 2026   Router9   Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Sun Mar 1 15:34:49 2026   Router9   Router(config-if)#exit
+Sun Mar 1 15:35:04 2026   Router9   Router(config)#int s0/0/0
+Sun Mar 1 15:35:31 2026   Router9   Router(config-if)#int se0/0/0
+Sun Mar 1 15:35:40 2026   Router9   Router(config-if)#int serial 0/0/0
+Sun Mar 1 15:35:59 2026   Router9   Router(config-if)#no shutdown
+Sun Mar 1 15:36:41 2026   Router9   Router(config-if)#ip address 192.168.12.1 255.255.255.252
+Sun Mar 1 15:37:29 2026   Router9   Router(config-if)#exit
+Sun Mar 1 15:37:40 2026   Router9   Router(config)#do wr
+Sun Mar 1 15:38:51 2026   Router7   Router>enable 
+Sun Mar 1 15:38:54 2026   Router7   Router#conf t
+Sun Mar 1 15:39:12 2026   Router7   Router(config)#int f0/0
+Sun Mar 1 15:39:18 2026   Router7   Router(config-if)#no shutdown 
+Sun Mar 1 15:39:34 2026   Router7   Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Sun Mar 1 15:39:37 2026   Router7   Router(config-if)#exit
+Sun Mar 1 15:40:23 2026   Router7   Router(config)#int s0/0/0
+Sun Mar 1 15:40:32 2026   Router7   Router(config-if)#no shutdown 
+Sun Mar 1 15:40:51 2026   Router7   Router(config-if)#ip address 192.168.12. 
+Sun Mar 1 15:40:54 2026   Router7   Router(config-if)#ip address 192.168.12.2 
+Sun Mar 1 15:41:02 2026   Router7   Router(config-if)#ip address 192.168.12.2 255.255.255.252
+Sun Mar 1 15:41:38 2026   Router7   Router(config-if)#exit
+Sun Mar 1 15:41:44 2026   Router7   Router(config)#int s0/0/1
+Sun Mar 1 15:43:44 2026   Router7   Router(config-if)#no shutdown 
+Sun Mar 1 15:43:55 2026   Router7   Router(config-if)#ip address 192.168.23.1 255.255.255.252
+Sun Mar 1 15:43:58 2026   Router7   Router(config-if)#exit
+Sun Mar 1 15:44:23 2026   Router7   Router(config)#do wr
+Sun Mar 1 15:44:33 2026   Router7   Router(config)#exit
+Sun Mar 1 15:44:55 2026   Router7   Router#show ip interface brief
+Sun Mar 1 15:49:20 2026   Router7   Router#conf t
+Sun Mar 1 15:49:23 2026   Router7   Router(config)#int f0/0
+Sun Mar 1 15:49:35 2026   Router7   Router(config-if)#no ip address 
+Sun Mar 1 15:51:20 2026   Router7   Router(config-if)#do sh ip
+Sun Mar 1 15:51:26 2026   Router7   Router(config-if)#do sh ip int br 
+Sun Mar 1 15:51:45 2026   Router7   Router(config-if)#no ip address 
+Sun Mar 1 15:51:57 2026   Router7   Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Sun Mar 1 15:51:59 2026   Router7   Router(config-if)#exit
+Sun Mar 1 15:52:04 2026   Router7   Router(config)#do sh ip int br
+Sun Mar 1 15:52:30 2026   Router8   Router>en
+Sun Mar 1 15:52:33 2026   Router8   Router#conf t
+Sun Mar 1 15:52:44 2026   Router8   Router(config)#int f0/0
+Sun Mar 1 15:52:46 2026   Router8   Router(config-if)#no shutdown 
+Sun Mar 1 15:52:55 2026   Router8   Router(config-if)#ip address 192.168.30.1 255.255.255.0
+Sun Mar 1 15:52:57 2026   Router8   Router(config-if)#exit
+Sun Mar 1 15:53:50 2026   Router8   Router(config)#int s0/0/0
+Sun Mar 1 15:53:52 2026   Router8   Router(config-if)#no shutdown 
+Sun Mar 1 15:54:53 2026   Router8   Router(config-if)#ip address 192.168.23.2 255.255.255.252
+Sun Mar 1 15:54:57 2026   Router8   Router(config-if)#exit
+Sun Mar 1 15:55:37 2026   Router8   Router(config)#do sh ip int br 
+Sun Mar 8 14:51:17 2026   Router9   Router>EN
+Sun Mar 8 14:51:43 2026   Router9   Router#show ip interface brief 
+Sun Mar 8 14:52:10 2026   Router7   Router>en
+Sun Mar 8 14:52:15 2026   Router7   Router#sh ip int br 
+Sun Mar 8 14:52:40 2026   Router9   Router#conf t
+Sun Mar 8 14:52:47 2026   Router9   Router(config)#hostname R-1
+Sun Mar 8 14:52:55 2026   Router7   Router#conf t
+Sun Mar 8 14:53:01 2026   Router7   Router(config)#hostname R-2
+Sun Mar 8 14:53:08 2026   Router8   Router>en
+Sun Mar 8 14:53:10 2026   Router8   Router#conf t
+Sun Mar 8 14:53:16 2026   Router8   Router(config)#hostname R-3
+Sun Mar 8 14:53:39 2026   Router9   R-1(config)#exit
+Sun Mar 8 14:53:56 2026   Router9   R-1#ping 192.168.12.2
+Sun Mar 8 14:54:47 2026   Router7   R-2(config)#do ping 192.168.23.2
+Sun Mar 8 15:11:02 2026   Router9   R-1>en
+Sun Mar 8 15:11:39 2026   Router9   R-1#show ip route 
+Sun Mar 8 15:14:40 2026   Router7   R-2>en
+Sun Mar 8 15:14:42 2026   Router7   R-2#sh ip route
+Sun Mar 8 15:22:53 2026   Router9   R-1>en
+Sun Mar 8 15:22:55 2026   Router9   R-1#conf t
+Sun Mar 8 15:25:45 2026   Router9   R-1(config)#ip route 192.168.20.0 255.255.255.0 192.168.12.2
+Sun Mar 8 15:26:20 2026   Router9   R-1(config)#do sh ip route
+Sun Mar 8 15:29:48 2026   Router9   R-1(config)#ip route 192.168.23.0 255.255.255.252 192.168.12.2
+Sun Mar 8 15:30:39 2026   Router9   R-1(config)#ip route 192.168.30.0 255.255.255.0 192.168.12.2
+Sun Mar 8 15:31:19 2026   Router9   R-1(config)#do sh ip route
+Sun Mar 8 15:32:02 2026   Router7   R-2>en
+Sun Mar 8 15:32:07 2026   Router7   R-2#show ip route
+Sun Mar 8 15:32:11 2026   Router7   R-2#conf t
+Sun Mar 8 15:33:04 2026   Router7   R-2(config)#ip route 192.168.10.0 255.255.255.0 192.168.12.1
+Sun Mar 8 15:33:18 2026   Router7   R-2(config)#ip route 192.168.30.0 255.255.255.0 192.168.23.2
+Sun Mar 8 15:33:55 2026   Router7   R-2(config)#do sh ip route
+Sun Mar 8 15:34:49 2026   Router7   R-2(config)#do sh ip int br
+Sun Mar 8 15:35:49 2026   Router7   R-2(config)#int f0/0
+Sun Mar 8 15:35:53 2026   Router7   R-2(config-if)#no shutdown 
+Sun Mar 8 15:36:02 2026   Router7   R-2(config-if)#ip address 192.168.20.1 255.255.255.0
+Sun Mar 8 15:36:03 2026   Router7   R-2(config-if)#exit
+Sun Mar 8 15:39:49 2026   Router8   R-3>en
+Sun Mar 8 15:39:52 2026   Router8   R-3#sh ip route
+Sun Mar 8 15:41:23 2026   Router8   R-3#conf t
+Sun Mar 8 15:41:34 2026   Router8   R-3(config)#ip route 192.168.20.0 255.255.255.0 192.168.23.1
+Sun Mar 8 15:41:49 2026   Router8   R-3(config)#ip route 192.168.12.0 255.255.255.252 192.168.23.1
+Sun Mar 8 15:41:58 2026   Router8   R-3(config)#ip route 192.168.10.0 255.255.255.0 192.168.23.1
+Sun Mar 8 15:42:39 2026   Router8   R-3(config)#do sh ip route
